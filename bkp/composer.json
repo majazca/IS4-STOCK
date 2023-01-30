@@ -1,0 +1,9 @@
+{
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.25",
+        "vlucas/phpdotenv": "^5.5",
+        "bramus/router": "~1.6",
+        "monolog/monolog": "^2.8",
+        "phroute/phroute": "^2.2"
+    }
+}

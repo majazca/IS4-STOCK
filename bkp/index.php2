@@ -1,0 +1,25 @@
+<?php
+    session_start();
+    $_SESSION['t'] = 1;
+    /*
+    Requerimientos: 
+    Crear un sistema básico de stock en PHP. Las funcionalidades que debe tener el sistema  son las siguientes: 
+    • Login/Logout    x`
+    • Debe presentar una página de inicio, en dónde se encuentre el menú y los datos del  usuario.  x
+    • Cambiar contraseña. 
+    • CRUD de productos. 
+    • Listar Existencias 
+    • Registrar Entradas 
+    • Registrar Salidas 
+    • Descargar Existencias en un archivo Excel 
+    • Un reporte gráfico 
+    Algunas consideraciones del sistema deben ser las siguientes:  
+    • Diseño de Base de datos – libre del alumno.  x
+    • Uso de orientación a objetos.  x
+    • Contraseñas de base de datos encriptadas. x
+    • Uso de composer x
+    • Logger de sistema  x
+    • Auditoria 
+    */
+    print_r($_SESSION);
+    

@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+
+  stocksys:
+    container_name: ministocksysPHP74
+    image: php:7.4-apache
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: user_wp
+      WORDPRESS_DB_PdcoASSWORD: asdasd
+      WORDPRESS_DB_NAME: bd_wp
+    ports:
+      - 9092:80
+    volumes:
+      - ./:/var/www/html/
+
+  dbPostgres:
+    container_name: mypostgres
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_DB: mydb
+    volumes:
+      - ./db_postgresql:/var/lib/postgresql/data

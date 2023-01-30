@@ -1,0 +1,6 @@
+[2023-01-14T06:28:02.671117+00:00] APP.INFO: Logueo de usuario {"user_id":1} []
+[2023-01-24T01:22:08.625457+00:00] APP.INFO: Intento fallido de inicio de sesion {"correo":"test@mail.net"} []
+[2023-01-24T01:22:12.449030+00:00] APP.INFO: Intento fallido de inicio de sesion {"correo":"test@mail.net"} []
+[2023-01-24T01:22:25.736817+00:00] APP.INFO: Intento fallido de inicio de sesion {"correo":"test@mail.net"} []
+[2023-01-24T01:22:31.390573+00:00] APP.INFO: Intento fallido de inicio de sesion {"correo":"test@mail.net"} []
+[2023-01-24T01:22:38.623300+00:00] APP.INFO: Logueo de usuario {"user_id":1} []
