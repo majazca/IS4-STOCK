@@ -12,6 +12,16 @@ producto_id INTEGER  NOT NULL,
     precio_individual MONEY  NOT NULL,
     precio_total CHARACTER(40)  NOT NULL,
 
+INSERT INTO existencias (
+    producto_id,
+    cantidad_total,
+    lote,
+    fecha_vencimiento,
+    precio_individual,
+    precio_total
+) 
+SELECT id, 0, '', '2023-12-31', 0, 0  FROM productos;
+
 */ 
 $sql = "SELECT 
         p.id,

@@ -306,6 +306,12 @@
                         <p>Agregar productos</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/home.php?v=productos&action=existencias" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Existencias</p>
+                        </a>
+                    </li>
                     </ul>
                 </li>
                 <li class="nav-header">LABELS</li>
