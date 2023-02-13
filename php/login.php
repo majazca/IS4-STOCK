@@ -40,7 +40,7 @@
         $_SESSION['nombre'] = $usuarioExistente[0]['nombre'];
         $_SESSION['tiempo'] = date("Y-m-d H:i:s");
         $logger = new Logger('APP');
-        $logger->pushHandler(new StreamHandler(DIRECTORIO.'/app.log', Logger::DEBUG));
+        $logger->pushHandler(new StreamHandler(RUTA.'/app.log', Logger::DEBUG));
         $logger->info('Logueo de usuario', ['user_id' => $usuarioExistente[0]['id']]);
     
         echo json_encode([
@@ -59,7 +59,7 @@
             'sql' => $verificarEmail
         ]);
         $logger = new Logger('APP');
-        $logger->pushHandler(new StreamHandler(DIRECTORIO.'/app.log', Logger::DEBUG));
+        $logger->pushHandler(new StreamHandler(RUTA.'/app.log', Logger::DEBUG));
         $logger->info('Intento fallido de inicio de sesion', ['correo' => $credenciales[0]]);
         exit();
     }

@@ -30,7 +30,7 @@
         $conexion_pg = new PDO( $cadena, $_ENV['POSTGRESQL_USER'], $_ENV['POSTGRESQL_PASS']);
         $conexion_pg->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $logger = new Logger('APP');
-        $logger->pushHandler(new StreamHandler(__DIR__ . '/../logs/app.log', Logger::DEBUG));
+        $logger->pushHandler(new StreamHandler(RUTA. '/app.log', Logger::DEBUG));
         $logger->info('Conexion exitosa');
     } catch (\PDOException $e) {
         if ($_ENV['ENVIRONMENT'] != "production") {
