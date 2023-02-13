@@ -15,7 +15,7 @@
     }elseif (isset($_GET["v"]) && $_GET["v"] == 'salidas') {
         include "vistas/salidas.php";
     }else {
-        include "vistas/home.php";
+        include "vistas/home.php"; 
         //include "vistas/usuarios.php";
     }
 
