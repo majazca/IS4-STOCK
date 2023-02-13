@@ -56,7 +56,7 @@
 
     if ($conexion_pg->lastInsertId()) {
         $logger = new Logger('APP');
-        $logger->pushHandler(new StreamHandler(__DIR__ . '/../logs/app.log', Logger::DEBUG));
+        $logger->pushHandler(new StreamHandler(RUTA. '/app.log', Logger::DEBUG));
         $logger->info('Creacion de usuario', ['user_id' => $conexion_pg->lastInsertId()]);
         echo json_encode([
             'res' => 'usuario creado',
@@ -65,7 +65,7 @@
 
     }else{
         $logger = new Logger('APP');
-        $logger->pushHandler(new StreamHandler(__DIR__ . '/../logs/app.log', Logger::DEBUG));
+        $logger->pushHandler(new StreamHandler(RUTA.'/app.log', Logger::DEBUG));
         $logger->info('Intento fallido al crear usuario', ['user' => $credenciales[0]]);
         echo json_encode([
             'res' => 'error al crear usuario',
