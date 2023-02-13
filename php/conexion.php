@@ -1,6 +1,6 @@
 <?php
     
-    if (!defined("RUTA")) {
+    if (!defined("RUTA")) { 
         define("RUTA","/home/majazca/actions-runner/uca/IS4-STOCK/IS4-STOCK/");  
     }
 
