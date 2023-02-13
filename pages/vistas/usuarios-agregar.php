@@ -1,17 +1,4 @@
-<!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    
-    <!-- CREATE TABLE productos (
-    id SERIAL  NOT NULL,
-    categoria_id INTEGER  NOT NULL,
-    nombre CHARACTER VARYING(150)  NOT NULL,
-    codigo CHARACTER VARYING(40)  NOT NULL,
-    descripcion TEXT,
-    CONSTRAINT PK_productos PRIMARY KEY (id)
-); -->
-
-    <!-- Main content -->
-    <section class="content">
+<section class="content">
       <div class="row">
         <div class="col-md-6">
           <div class="card card-primary">
@@ -24,27 +11,26 @@
                 </button>
               </div>
             </div>
-            <div class="card-body">
+            <div class="card-body form-user">
               <div class="form-group">
-                <label for="productName">Nombre</label>
-                <input type="text" id="productName" class="form-control">
+                <label for="user">usuario</label>
+                <input type="text" id="user" class="form-control" required>
               </div>
               <div class="form-group">
-                <label for="productCode">Codigo</label>
-                <input type="text" id="productCode" class="form-control">
+                <label for="userName">Nombre</label>
+                <input type="text" id="userName" class="form-control" required>
               </div>
               <div class="form-group">
-                <label for="codeDescription">Descripcion</label>
-                <textarea id="codeDescription" class="form-control" rows="4"></textarea>
+                <label for="userLastName">Apellido</label>
+                <input id="userLastName" class="form-control" required>
               </div>
               <div class="form-group">
-                <label for="categoryProduct">Categoria</label>
-                <select id="categoryProduct" class="form-control custom-select">
-                  <option selected disabled>Seleccione uno</option>
-                  <option>On Hold</option>
-                  <option>Canceled</option>
-                  <option>Success</option>
-                </select>
+              <label for="userPassword">Contraseña</label>
+                <input id="userPassword" class="form-control" required>
+              </div>
+              <div class="form-group">
+              <label for="userRePassword">Repetir contraseña</label>
+                <input id="userRePassword" class="form-control" required>
               </div>
             </div>
             <!-- /.card-body -->
@@ -84,10 +70,7 @@
       <div class="row">
         <div class="col-12">
           <a href="#" class="btn btn-secondary">Cancelar</a>
-          <input type="submit" value="Crear nuevo Producto" class="btn btn-success float-right">
+          <button id="addUser" class="btn btn-success float-right user-action">Crear nuevo usuario</button>
         </div>
       </div>
     </section>
-    <!-- /.content -->
-
-  <!-- /.content-wrapper -->

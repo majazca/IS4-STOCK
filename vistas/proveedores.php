@@ -27,6 +27,7 @@ session_start();
         />
         <!-- Theme style -->
         <link rel="stylesheet" href="../css/adminlte.min.css" />
+        <link rel="stylesheet" href="../css/custom.css">
     </head>
 
     <body class="hold-transition sidebar-mini">
@@ -43,14 +44,16 @@ session_start();
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Categorias</h1>
+                                <h1>Proveedores</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item">
                                         <a href="#">Home</a>
                                     </li>
-                                    
+                                    <li class="breadcrumb-item active">
+                                        
+                                    </li>
                                 </ol>
                             </div>
                         </div>
@@ -65,20 +68,9 @@ session_start();
                         in_array($_GET["action"], ['listar', 'lista']) 
                         || !isset($_GET["action"])
                     ) {
-                        include "categorias-lista.php"; 
-                    }
-
-                    if (isset($_GET["action"]) && $_GET["action"] == 'agregar') {
-                        include "categorias-lista.php"; 
-                        //include "categorias-agregar.php"; 
-                    }
-                    
-                    if (isset($_GET["action"]) && $_GET["action"] == 'editar') {
-                        if (isset($_GET["categ"]) && is_numeric($_GET["categ"])) {
-                            include "categorias-editar.php";
-                        }else{
-                            include "categorias-lista.php"; 
-                        }
+                        include "proveedores-lista.php"; 
+                    } else{
+                        include "proveedores-lista.php"; 
                     }
                     
                 ?>

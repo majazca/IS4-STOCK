@@ -40,7 +40,7 @@ loguear.addEventListener("click", (e) => {
             if (datos.login) {
                 console.log(window.location.href);
                 console.log(window.location.origin);
-                window.location.href = window.location.origin;
+                window.location.href = window.location.origin + "/home.php";
 
             }
         }

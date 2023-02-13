@@ -196,13 +196,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/charts/chartjs.html" class="nav-link">
+                        <a href="/home.php?v=usuarios" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Listar usuarios</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/charts/flot.html" class="nav-link">
+                        <a href="/home.php?v=usuarios&action=agregar" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Agregar usuarios</p>
                         </a>
@@ -220,13 +220,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/charts/chartjs.html" class="nav-link">
+                            <a href="/home.php?v=entradas" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Listar entradas de productos</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
+                            <a href="/home.php?v=entradas&action=agregar" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Registrar entrada de productos</p>
                             </a>
@@ -245,13 +245,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/charts/chartjs.html" class="nav-link">
+                            <a href="/home.php?v=salidas&action=listar" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Listar salidas de productos</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
+                            <a href="/home.php?v=salidas&action=agregar" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Registrar salida de productos</p>
                             </a>
@@ -270,13 +270,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/charts/chartjs.html" class="nav-link">
+                            <a href="/home.php?v=categorias" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Listar categorias</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
+                            <a href="/home.php?v=categorias&action=agregar" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Agregar categoría</p>
                             </a>
@@ -294,32 +294,28 @@
                     </a>
                     <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/charts/chartjs.html" class="nav-link">
+                        <a href="/home.php?v=productos&action=listar" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>ChartJS</p>
+                        <p>
+                            Listar productos</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/charts/flot.html" class="nav-link">
+                        <a href="/home.php?v=productos&action=agregar" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Flot</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="pages/charts/inline.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Inline</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="pages/charts/uplot.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>uPlot</p>
+                        <p>Agregar productos</p>
                         </a>
                     </li>
                     </ul>
                 </li>
                 <li class="nav-header">LABELS</li>
+                <li class="nav-item">
+                    <a href="/home.php?v=proveedores&action=lista" class="nav-link">
+                    <i class="nav-icon far fa-circle text-danger"></i>
+                    <p class="text">Proveedores</p>
+                    </a>
+                </li>
+                <?php /*
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                     <i class="nav-icon far fa-circle text-danger"></i>
@@ -338,6 +334,7 @@
                     <p>Informational</p>
                     </a>
                 </li>
+                */?>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

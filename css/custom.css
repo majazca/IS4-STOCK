@@ -1,0 +1,13 @@
+.product-lote {
+    width: 120px;
+}
+
+.product-qty {
+    width: 60px;
+}
+
+.product,
+.product-punit,
+.product-ptotal {
+    width: 120px;
+}
