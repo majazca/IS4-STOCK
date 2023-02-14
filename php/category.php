@@ -34,6 +34,7 @@
             $sql = "UPDATE categorias SET nombre = (?), codigo = (?), descripcion = ? where id = ?";
             $stmt = $conexion_pg->prepare($sql);
             $datos = [$categoryName, $categoryCode, $categoryDescription, $categoryId];
+            $stmt->execute($datos);
             echo json_encode(["respuesta" => true]);
         }
     }

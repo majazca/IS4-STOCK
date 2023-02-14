@@ -1,4 +1,4 @@
-<?php
+}<?php
 $sku = (int) $_GET["sku"];
 if ($conexion_pg == NULL) {
   $conexion_pg = new PDO( $cadena, $_ENV['POSTGRESQL_USER'], $_ENV['POSTGRESQL_PASS']);
@@ -54,13 +54,13 @@ $stmt->closeCursor();
                         }else{
                             $filtro = '';
                         }
-                        echo  "<option {$filtro} value='{$value['nombre']}'>{$value['nombre']}</option>";
+                        echo  "<option {$filtro} value='{$value['id']}'>{$value['nombre']}</option>";
                     } ?>
                 </select>
               </div>
               <div class="form-group">
                 <label for="productDescription">Descripcion</label>
-                <textarea id="productDescription" class="form-control" required><?php echo $data[0]["descripcion"]; ?></textarea>
+                <input id="productDescription" class="form-control" required value="<?php echo $data[0]["descripcion"]; ?>">
               </div>
             </div>
             <!-- /.card-body -->
@@ -71,7 +71,7 @@ $stmt->closeCursor();
       <div class="row">
         <div class="col-12">
           <a href="#" class="btn btn-secondary">Cancelar</a>
-          <input id="editProduct" type="submit" value="Guardar cambios" class="btn btn-success float-right product-action">
+          <button id="editProduct" class="btn btn-success float-right product-action">Guardar cambios</button>
         </div>
       </div>
     </section>

@@ -109,5 +109,6 @@ session_start();
         <!-- AdminLTE for demo purposes -->
         <script src="../js/demo.js"></script>
         <script src="../js/category.js"></script>
+        <script src="../js/products.js"></script>
     </body>
 </html>

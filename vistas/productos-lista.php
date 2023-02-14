@@ -48,7 +48,7 @@ $stmt->closeCursor();
             </div>
         </div>
         <div class="card-body p-0">
-            <table class="table table-striped projects">
+            <table class="table table-striped listado-productos">
                 <thead>
                     <tr>
                         <th style="width: 1%">#</th>
@@ -90,13 +90,12 @@ $stmt->closeCursor();
                                     </i>
                                     Edit
                                 </a>
-                                <a
-                                    class='btn btn-danger btn-sm'
-                                    href='#'
+                                <button
+                                    class='btn btn-danger btn-sm deleteProduct' data-id='{$producto["id"]}'
                                 >
                                     <i class='fas fa-trash'> </i>
                                     Delete
-                                </a>
+                                </button>
                             </td>
                         </tr>";
                     }

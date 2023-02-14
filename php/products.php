@@ -85,6 +85,7 @@
                 $datosUpdate = [];
                 $dataTest = "";
                 $toInsert = [];
+                $iterar = 0;
                 foreach ($aUsar as $key => $value) {
                     # code...
                     $dataTest .= "((?), (?), (?), (?), (?), (?), (?)),";
@@ -95,25 +96,29 @@
                     $toInsert[] = $productosPunit[$key];
                     $toInsert[] = $productosPtotal[$key];
                     $toInsert[] = $productosVence[$key];
-                    $sqlUpdate[] = "UPDATE existencias SET cantidad_total= cantidad_total + ?, 
+                    $sqlUpdate[$iterar] = "UPDATE existencias SET cantidad_total= cantidad_total + ?, 
                     lote=?, 
                     fecha_vencimiento=?, 
                     precio_individual = ?,	
                     precio_total =? WHERE producto_id=?";
-                    $datosUpdate[] = [
+                    $datosUpdate[$iterar] = [
                         $productosQty[$key], $productosLote[$key], 
                         $productosVence[$key], $productosPunit[$key],
                         $productosPtotal[$key],$claves[$productosId[$key]]
                     ];
-                    $stmtU = $conexion_pg->prepare($sqlUpdate[]);
-                    $stmtU->execute($datosUpdate[]);
+                    $stmtU = $conexion_pg->prepare($sqlUpdate[$iterar]);
+                    $stmtU->execute($datosUpdate[$iterar]);
+                    $iterar++;
                 }
                 $dataTest = substr($dataTest, 0, -1);
                 $entrada["detalle"] .= $dataTest;
                 echo json_encode([$entrada['detalle'], $toInsert]);
                 $stmt = $conexion_pg->prepare($entrada["detalle"]);
                 $stmt->execute($toInsert);
+                echo json_encode(["respuesta" => true]);
+                die();
             }
+            echo json_encode(["respuesta" => false]);
         }elseif ($_POST['action'] == "addSalida") {
             # sanitize_title_with_dashes( 
                 $claves = getIdbyProduct();
@@ -150,6 +155,7 @@
                 $datosUpdate = [];
                 $dataTest = "";
                 $toInsert = [];
+                $iterar = 0;
                 foreach ($aUsar as $key => $value) {
                     # code...
                     $dataTest .= "((?), (?), (?), (?), (?), (?), (?)),";
@@ -160,29 +166,67 @@
                     $toInsert[] = $productosPunit[$key];
                     $toInsert[] = $productosPtotal[$key];
                     $toInsert[] = $productosVence[$key];
-                    $sqlUpdate[] = "UPDATE existencias SET cantidad_total= cantidad_total - (?), 
+                    $sqlUpdate[$iterar] = "UPDATE existencias SET cantidad_total= cantidad_total - (?), 
                     lote=?, 
                     fecha_vencimiento=?, 
                     precio_individual = ?,	
                     precio_total =? WHERE producto_id=?";
-                    $datosUpdate[] = [
+                    $datosUpdate[$iterar] = [
                         $productosQty[$key], $productosLote[$key], 
                         $productosVence[$key], $productosPunit[$key],
                         $productosPtotal[$key],$claves[$productosId[$key]]
                     ];
-                    $stmtU = $conexion_pg->prepare($sqlUpdate[]);
-                    $stmtU->execute($datosUpdate[]);
+                    $stmtU = $conexion_pg->prepare($sqlUpdate[$iterar]);
+                    $stmtU->execute($datosUpdate[$iterar]);
+                    $iterar++;
                 }
                 $dataTest = substr($dataTest, 0, -1);
                 $entrada["detalle"] .= $dataTest;
                 echo json_encode([$entrada['detalle'], $toInsert]);
                 $stmt = $conexion_pg->prepare($entrada["detalle"]);
                 $stmt->execute($toInsert);
+                echo json_encode(["respuesta" => true]);
             }
-                
+            echo json_encode(["respuesta" => false]);
             // fin salida
         }
         # code...
+        elseif ($_POST['action'] == "editProduct") {
+            //$_POST["supplierId"]
+            $sqlUpdate = "UPDATE productos SET categoria_id = ?, 
+                    nombre =?, 
+                    codigo=?, 
+                    descripcion =? WHERE id=?";
+            $stmtU = $conexion_pg->prepare($sqlUpdate);
+            $stmtU->execute([
+                $_POST['productCategoryOk'],
+                $_POST['productName'],
+                $_POST['productCode'],
+                $_POST['productDescription'],
+                $_POST['productId']
+            ]);
+            echo json_encode(["respuesta" => true]);
+        }
+        elseif ($_POST['action'] == "addProduct") {
+            # code...
+            
+            $sqlInsert = "INSERT INTO productos (nombre, codigo, descripcion, categoria_id) VALUES ((?),(?),(?),(?))";
+            $stmtI = $conexion_pg->prepare($sqlInsert);
+            $stmtI->execute([
+                $_POST['productName'],
+                $_POST['productCode'],
+                $_POST['codeDescription'],
+                $_POST['productCategoryOk']
+            ]);
+            echo json_encode(["respuesta" => true]);
+        }elseif ($_POST['action'] == "deleteProduct") {
+            $sqlDel = "DELETE FROM productos WHERE id = (?)";
+            $stmtD = $conexion_pg->prepare($sqlDel);
+            $stmtD->execute([
+                $_POST['productIdDelete']
+            ]);
+            echo json_encode(["respuesta" => true]);
+        }
     }
     
 

@@ -103,7 +103,7 @@
                                         <input type="text" class="product-lote">
                                     </td>
                                     <td>
-                                        <input type="date" class="product-vence">
+                                        <input type="date" class="product-vence" value="<?php echo date('Y-m-d');?>" >
                                     </td>
                                     <td>
                                         <input type="text" class="product-punit" value=0>
@@ -123,7 +123,7 @@
                                         <input type="text" class="product-lote">
                                     </td>
                                     <td>
-                                        <input type="date" class="product-vence">
+                                        <input type="date" class="product-vence" value="<?php echo date('Y-m-d');?>" >
                                     </td>
                                     <td>
                                         <input type="text" class="product-punit" value=0>
@@ -143,7 +143,7 @@
                                         <input type="text" class="product-lote">
                                     </td>
                                     <td>
-                                        <input type="date" class="product-vence">
+                                        <input type="date" class="product-vence" value="<?php echo date('Y-m-d');?>" >
                                     </td>
                                     <td>
                                         <input type="text" class="product-punit" value=0>
@@ -163,7 +163,7 @@
                                         <input type="text" class="product-lote">
                                     </td>
                                     <td>
-                                        <input type="date" class="product-vence">
+                                        <input type="date" class="product-vence" value="<?php echo date('Y-m-d');?>" >
                                     </td>
                                     <td>
                                         <input type="text" class="product-punit" value=0>
@@ -183,7 +183,7 @@
                                         <input type="text" class="product-lote">
                                     </td>
                                     <td>
-                                        <input type="date" class="product-vence">
+                                        <input type="date" class="product-vence" value="<?php echo date('Y-m-d');?>" >
                                     </td>
                                     <td>
                                         <input type="text" class="product-punit" value=0>
@@ -203,7 +203,7 @@
                                         <input type="text" class="product-lote">
                                     </td>
                                     <td>
-                                        <input type="date" class="product-vence">
+                                        <input type="date" class="product-vence" value="<?php echo date('Y-m-d');?>" >
                                     </td>
                                     <td>
                                         <input type="text" class="product-punit" value=0>
@@ -223,7 +223,7 @@
                                         <input type="text" class="product-lote">
                                     </td>
                                     <td>
-                                        <input type="date" class="product-vence">
+                                        <input type="date" class="product-vence" value="<?php echo date('Y-m-d');?>" >
                                     </td>
                                     <td>
                                         <input type="text" class="product-punit" value=0>
@@ -246,7 +246,7 @@
     <div class="row">
         <div class="col-12">
             <a href="#" class="btn btn-secondary">Cancelar</a>
-            <button id="addSalida" class="btn btn-success float-right product-action">Realizar entrada</button>
+            <button id="addSalida" class="btn btn-success float-right product-action">Realizar salida</button>
         </div>
     </div>
 </section>
