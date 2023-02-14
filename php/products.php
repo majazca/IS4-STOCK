@@ -218,6 +218,19 @@
                 $_POST['codeDescription'],
                 $_POST['productCategoryOk']
             ]);
+            $id = $conexion_pg->lastInsertId();
+            // se agrega la existencia
+            $sql = "INSERT INTO existencias (
+                producto_id,
+                cantidad_total,
+                lote,
+                fecha_vencimiento,
+                precio_individual,
+                precio_total
+            ) 
+            values ((?), 0, '', '2023-12-31', 0, 0)";
+            $stmtI2 = $conexion_pg->prepare($sql);
+            $stmtI2->execute([$id]);
             echo json_encode(["respuesta" => true]);
         }elseif ($_POST['action'] == "deleteProduct") {
             $sqlDel = "DELETE FROM productos WHERE id = (?)";
